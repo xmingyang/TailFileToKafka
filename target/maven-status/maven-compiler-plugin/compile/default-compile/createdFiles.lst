@@ -1,0 +1,4 @@
+org\rb\TailFileToKafka.class
+org\rb\TailFileToKafka_LineNumberReader.class
+org\rb\TailFileToKafka_LineNumberReader$TailFileThread.class
+org\rb\TailFileToKafka$TailFileThread.class
