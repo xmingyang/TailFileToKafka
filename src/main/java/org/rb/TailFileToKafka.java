@@ -391,6 +391,10 @@ public class TailFileToKafka {
 				String path=fs[i].getAbsolutePath();
 				//以drname作为position文件名
 				String drname=path.replaceAll("/", "_");
+				 if (!fileregex.equals(""))
+				 {
+					 drname=drname+"\""+fileregex+"\"";
+				 }
 				if (hm.containsKey(path))
 			{
 					if (!hm.get(path).isAlive())
@@ -428,6 +432,10 @@ public class TailFileToKafka {
 			 else 
 			 {
 				 String drname=pathname.replaceAll("/", "_");
+				 if (!fileregex.equals(""))
+				 {
+					 drname=drname+"\""+fileregex+"\"";
+				 }
 				 TailFileThread tt=new TailFileThread(pathname,drname,topicname,fileregex,writepostion_rowcnt,pause_rouwcnt);
 				 tt.start();
 				 logger.info("thread:"+tt.getName()+" start to tail "+pathname);
@@ -439,6 +447,10 @@ public class TailFileToKafka {
 		 else 
 		 {
 			 String drname=pathname.replaceAll("/", "_");
+			 if (!fileregex.equals(""))
+			 {
+				 drname=drname+"\""+fileregex+"\"";
+			 }
 			 TailFileThread tt=new TailFileThread(pathname,drname,topicname,fileregex,writepostion_rowcnt,pause_rouwcnt);
 			 tt.start();
 			 logger.info("thread:"+tt.getName()+" start to tail "+pathname);
